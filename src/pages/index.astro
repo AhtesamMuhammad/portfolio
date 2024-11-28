@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import Plant from "../components/icons/Plant.astro";
 ---
 
 <Layout
@@ -12,7 +15,7 @@ import SocialPill from "../components/SocialPill.astro";
   description="Hire Ahtesam to build your web or mobile application. Web Developer and Full-Stack Developer, specialized in creating unique applications."
 >
   <main>
-    <section class="w-full mx-auto lg:w-[46rem] py-44">
+    <SectionContainer>
       <h1 class="text-5xl font-bold flex gap-x-2 mb-4">
         Hey, I'm Ahtesam <Badge>Available for work</Badge>
       </h1>
@@ -25,24 +28,34 @@ import SocialPill from "../components/SocialPill.astro";
       </h2>
       <ul class="flex gap-x-4">
         <li>
+          <SocialPill
+            class="text-orange-500 hover:bg-orange-500 hover:text-white"
+            href="https://github.com/AhtesamMuhammad"
+          >
+            <GitHubIcon class="size-5" />
+            GitHub
+          </SocialPill>
+        </li>
+        <li>
           <SocialPill href="https://www.linkedin.com/in/ahtesamm/">
             <LinkedInIcon class="size-5" />
             LinkedIn
           </SocialPill>
         </li>
         <li>
-          <SocialPill href="https://github.com/AhtesamMuhammad">
-            <GitHubIcon class="size-5" />
-            GitHub
-          </SocialPill>
-        </li>
-        <li>
-          <SocialPill href="ahtesam.work@gmail.com">
+          <SocialPill href="mailto:ahtesam.work@gmail.com">
             <MailIcon class="size-5" />
-            ahtesa.work@gmail.com
+            ahtesam.work@gmail.com
           </SocialPill>
         </li>
       </ul>
-    </section>
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <h3 class="text-3xl font-semibold flex items-center gap-4">
+        <Plant class="size-8 font-bold" />
+        Work experience
+      </h3>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>

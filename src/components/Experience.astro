@@ -1,0 +1,40 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "QA TESTER",
+    date: "Nov 2023 - Feb 2024",
+    description:
+      "Performed Web3 testing and analyzed data using recording tools and network analysis. Led an automation project with Playwright, reported bugs in Jira, and documented in Notion. Worked with the team to reproduce and fix bugs.",
+    link: "",
+    company: "Brickken",
+  },
+  {
+    title: "DEVELOPER INTERN ERASMUS+",
+    date: "March 2023 - May 2023",
+    description:
+      "Learned programming concepts and explored new web development tools. Adapted to an international setting and improved English skills. Gained more programming knowledge and strengthened language abilities.",
+    link: "",
+    company: "Opolglass",
+  },
+  {
+    title: "MARKETING ASSISTANT",
+    date: "Nov 2020 - April 2021",
+    description:
+      "Managed client database efficiently. Increased brand awareness through social media posts. Created engaging marketing videos.",
+    link: "",
+    company: "MailBoxes Etc.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 px-4 mx-4">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
