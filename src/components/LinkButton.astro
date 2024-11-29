@@ -1,0 +1,12 @@
+---
+import GitHub from "./icons/GitHub.astro";
+---
+
+<a
+  class="flex items-center gap-2 border py-1 px-3 rounded-lg text-center font-medium bg-gray-100 text-gray-700 transition-all hover:bg-gray-200"
+  href={Astro.props.href}
+  target="_blank"
+  rel="noopener"
+>
+  <slot />
+</a>

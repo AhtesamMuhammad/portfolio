@@ -8,25 +8,41 @@ import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import Plant from "../components/icons/Plant.astro";
+import Code from "../components/icons/Code.astro";
+import Css3 from "../components/icons/Css3.astro";
+import Html5 from "../components/icons/Html5.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Link from "../components/icons/Link.astro";
 ---
 
 <Layout
   title="Ahtesam Porfolio - Web Developer and Full stack Programmer"
   description="Hire Ahtesam to build your web or mobile application. Web Developer and Full-Stack Developer, specialized in creating unique applications."
 >
-  <main>
+  <main class="mx-4">
     <SectionContainer>
-      <h1 class="text-5xl font-bold flex gap-x-2 mb-4">
-        Hey, I'm Ahtesam <Badge>Available for work</Badge>
-      </h1>
-      <h2 class="text-[1.25rem] text-wrap text-gray-600 mb-6">
-        <span>+3 years of experience.</span>
-        <span class="text-orange-400 font-medium"
-          >Web Developer and Full stack Programmer.</span
-        > From Barcelona, Spain ✈️. Focused on designing websites that are truly
-        one of a kind 👨‍💻.
-      </h2>
-      <ul class="flex gap-x-4">
+      <div
+        class="flex flex-col lg:flex-row md:flex-row gap-6 max-w-[35rem] md:max-w-max"
+      >
+        <img
+          class="flex-none max-w-[150px] max-h-[150px] lg:max-w-[200px] lg:max-h-[200px] lg:order-2 md:order-2 w-full rounded-xl text-pretty"
+          src="../../public/ahtesam-image.png"
+          alt="Ahtesam Muhammad photo"
+        />
+        <div class="flex-1">
+          <h1 class="text-3xl md:text-4xl font-bold flex gap-x-2 mb-2 ms:mb-4">
+            Hey, I'm Ahtesam <Badge class="text-sm">Available for work</Badge>
+          </h1>
+          <p class="text-[1.25rem] text-wrap text-gray-600 mb-6">
+            <span>+3 years of experience.</span>
+            <span class="text-orange-400 font-medium"
+              >Web Developer and Full stack Programmer.</span
+            > From Barcelona, Spain ✈️. Focused on designing websites that are truly
+            one of a kind 👨‍💻.
+          </p>
+        </div>
+      </div>
+      <ul class="flex gap-x-4 flex-wrap gap-3">
         <li>
           <SocialPill
             class="text-orange-500 hover:bg-orange-500 hover:text-white"
@@ -51,11 +67,68 @@ import Plant from "../components/icons/Plant.astro";
       </ul>
     </SectionContainer>
     <SectionContainer id="experience">
-      <h3 class="text-3xl font-semibold flex items-center gap-4">
+      <h2 class="text-3xl font-semibold flex items-center gap-4">
         <Plant class="size-8 font-bold" />
         Work experience
-      </h3>
+      </h2>
       <Experience />
+    </SectionContainer>
+    <SectionContainer>
+      <h2 class="text-3xl font-semibold flex gap-4 items-center mb-9">
+        <Code class="size-8" />
+        Projects
+      </h2>
+      <div class="flex flex-row gap-8">
+        <div class="overflow-hidden flex-grow-2 rounded-lg ">
+          <img
+            class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
+            src="/public/imgs/omnifood-image.webp"
+            alt="omnifood company that works with ia for deliver food"
+          />
+        </div>
+        <div class="">
+          <h3 class="mb-2 font-bold text-xl">
+            Omnifood - Web of subscription of home delivered meals
+          </h3>
+          <ul class="flex gap-x-4 flex-wrap gap-3 mb-3">
+            <li
+              class="rounded-full flex items-center gap-2 border px-2 py-1 bg-orange-500 text-white text-[12px]"
+            >
+              <Html5 class="size-5" />
+              HTML5
+            </li>
+            <li
+              class="rounded-full flex items-center gap-2 border px-3 py-1 bg-blue-500 text-white text-[10px]"
+            >
+              <Css3 class="size-4" />
+              CSS3
+            </li>
+          </ul>
+          <p class="text-gray-600 mb-3">
+            This project was created using HTML and CSS, leveraging both Grid
+            and Flexbox for layout design. It includes responsive features and a
+            functional call-to-action for a real-world feel.
+          </p>
+          <ul class="flex gap-4">
+            <li>
+              <LinkButton
+                href="https://github.com/AhtesamMuhammad/frontend-development-practice/tree/main/omnifood-desktop"
+              >
+                <GitHubIcon class="size-5" />
+                Code
+              </LinkButton>
+            </li>
+
+            <li>
+              <LinkButton href="https://omnifood-ahtesam.netlify.app/">
+                <Link class="size-5" />
+                Preview
+              </LinkButton>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <SectionContainer />
     </SectionContainer>
   </main>
 </Layout>
