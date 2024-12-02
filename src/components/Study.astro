@@ -1,0 +1,31 @@
+---
+import type { ACTION_ERROR_CODES } from "astro:actions";
+import StudyItem from "./StudyItem.astro";
+
+const STUDIES = [
+  {
+    title: "Mastering HTML and CSS",
+    institute: "Udemy",
+    date: "November, 2024",
+    description:
+      "Modern HTML5, CSS3 and web design and building a stunning website.",
+  },
+  {
+    title: "Multimedia Application Development",
+    institute: "Institute of Poblenou",
+    date: "2022 - 2024",
+    description:
+      "Mastery of computer systems, databases, programming in various languages, as well as multimedia and mobile programming",
+  },
+  {
+    title: "Digital Marketing & Advertising",
+    institute: "Institute of Poblenou",
+    date: "2019 - 2021",
+    description: "",
+  },
+];
+---
+
+<ol class="flex gap-2 items-start">
+  {STUDIES.map((study) => <StudyItem {...study} />)}
+</ol>
