@@ -18,6 +18,8 @@ import Java from "../components/icons/Java.astro";
 import TechnologiePill from "../components/TechnologiePill.astro";
 import StudyItem from "../components/Study.astro";
 import School from "../components/icons/School.astro";
+import GoodFinger from "../components/icons/GoodFinger.astro";
+import SkillsItem from "../components/SkillsItem.astro";
 ---
 
 <Layout
@@ -49,10 +51,7 @@ import School from "../components/icons/School.astro";
       </div>
       <ul class="flex gap-x-4 flex-wrap gap-3">
         <li>
-          <SocialPill
-            class="text-orange-500 hover:bg-orange-500 hover:text-white"
-            href="https://github.com/AhtesamMuhammad"
-          >
+          <SocialPill href="https://github.com/AhtesamMuhammad">
             <GitHubIcon class="size-5" />
             GitHub
           </SocialPill>
@@ -72,7 +71,7 @@ import School from "../components/icons/School.astro";
       </ul>
     </SectionContainer>
     <SectionContainer id="experience">
-      <h2 class="text-3xl font-semibold flex items-center gap-4">
+      <h2 class="mb-8 text-3xl font-semibold flex items-center gap-4">
         <Plant class="size-8 font-bold" />
         Work experience
       </h2>
@@ -80,12 +79,12 @@ import School from "../components/icons/School.astro";
     </SectionContainer>
     <SectionContainer id="projects">
       <article>
-        <h2 class="text-3xl font-semibold flex gap-4 items-center mb-9">
+        <h2 class="text-3xl font-semibold flex gap-4 items-center mb-8">
           <Code class="size-8" />
           Projects
         </h2>
-        <div class="flex flex-col md:flex-row gap-8 mb-10">
-          <div class="w-1/2 overflow-hidden rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row gap-8 mb-12">
+          <div class="w-full sm:w-1/2 overflow-hidden rounded-xl shadow-md">
             <img
               class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
               src="/public/imgs/omnifood-image.webp"
@@ -134,17 +133,9 @@ import School from "../components/icons/School.astro";
             </ul>
           </div>
         </div>
-
-        <div class="flex gap-8">
-          <div class="w-1/2 overflow-hidden rounded-lg shadow-md">
-            <img
-              class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
-              src="/public/imgs/MovieHub.png"
-              alt="omnifood company that works with ia for deliver food"
-            />
-          </div>
+        <div class="flex flex-col md:flex-row gap-8">
           <div
-            class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-between"
+            class="w-full order-2 sm:order-1 md:max-w-lg flex flex-col justify-between"
           >
             <h3 class="mb-2 font-bold text-2xl text-pretty">
               MovieHub - Android App for Exploring Movies via API
@@ -175,9 +166,18 @@ import School from "../components/icons/School.astro";
               </li>
             </ul>
           </div>
+          <div
+            class="md:w-full sm:w-1/2 order-1 sm:order-2 overflow-hidden rounded-xl shadow-md"
+          >
+            <img
+              class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
+              src="/public/imgs/MovieHub.png"
+              alt="Mobile app use and interpret the The Movie Database API"
+            />
+          </div>
         </div>
         <a
-          class="block text-lg text-center mt-12 mb-8 underline text-orange-400"
+          class="block text-sm text-center mt-10 md:mt-14 underline text-orange-400"
           href="https://github.com/AhtesamMuhammad"
           target="_blank"
           rel="noopener">See more projects &rarr;</a
@@ -190,6 +190,13 @@ import School from "../components/icons/School.astro";
         Studies
       </h2>
       <StudyItem />
+    </SectionContainer>
+    <SectionContainer id="skills">
+      <h2 class="text-3xl font-semibold flex items-center gap-4 mb-8">
+        <GoodFinger class="size-8" />
+        Skills
+      </h2>
+      <SkillsItem />
     </SectionContainer>
   </main>
 </Layout>
