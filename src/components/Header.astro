@@ -1,17 +1,49 @@
 ---
 import Download from "./icons/Download.astro";
+
+const navItems = [
+  {
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+  {
+    title: "Studies",
+    label: "studies",
+    url: "/#studies",
+  },
+  {
+    title: "Skills",
+    label: "skills",
+    url: "/#skills",
+  },
+];
 ---
 
 <header
-  class="flex justify-center items-center text-xs mb-16 pt-7 pb-2 sm:pb-12 mx-auto "
+  class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav class="flex items-center gap-6 sm:gap-11 text-sm border rounded-full py-1 px-3 bg-gray-100/30">
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#studies">Studies</a>
-    <a href="#skills">Skills</a>
+  <nav
+    class="flex justify-center items-center gap-2 sm:gap-4 px-1 sm:px-3 my-4 text-xs sm:text-sm font-medium rounded-full text-gray-600"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative px-2 py-2 transition hover:text-orange-500 "
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
     <a
-      class="flex items-center gap-2 py-1.5 px-4 bg-orange-500 text-white font-medium rounded-full hover:bg-orange-400 transition duration-300"
+      class="flex items-center gap-2 py-1.5 px-4 bg-orange-500 text-white font-medium rounded-full hover:scale-95 transition duration-300"
       href="/ahtesam-resume.pdf"
       download
     >
@@ -20,3 +52,65 @@ import Download from "./icons/Download.astro";
     </a>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-orange-100");
+            } else {
+              item.classList.remove("text-orange-100");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  nav {
+    @apply bg-gray-100/90;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      @apply bg-white/0;
+    }
+    to {
+      @apply shadow-md ring-1 backdrop-blur-sm ring-white/0 border border-gray-100;
+    }
+  }
+</style>
