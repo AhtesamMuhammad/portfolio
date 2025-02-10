@@ -20,6 +20,7 @@ import StudyItem from "../components/Study.astro";
 import School from "../components/icons/School.astro";
 import GoodFinger from "../components/icons/GoodFinger.astro";
 import SkillsItem from "../components/SkillsItem.astro";
+import Project from "../components/Project.astro";
 ---
 
 <Layout
@@ -33,7 +34,7 @@ import SkillsItem from "../components/SkillsItem.astro";
       >
         <img
           class="flex-none max-w-[150px] max-h-[150px] lg:max-w-[200px] lg:max-h-[200px] lg:order-2 md:order-2 w-full rounded-xl text-pretty shadow-md"
-          src="/ahtesam-image.webp"
+          src="/imgs/ahtesam-image.webp"
           alt="Ahtesam Muhammad photo"
         />
         <div class="flex-1">
@@ -53,7 +54,7 @@ import SkillsItem from "../components/SkillsItem.astro";
           </p>
         </div>
       </div>
-      <ul class="flex gap-3 sm:gap-4 flex-wrap ">
+      <ul class="flex gap-3 sm:gap-4 flex-wrap">
         <li>
           <SocialPill href="https://github.com/AhtesamMuhammad">
             <GitHubIcon class="size-5" />
@@ -81,112 +82,13 @@ import SkillsItem from "../components/SkillsItem.astro";
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id="projects">
-      <article>
-        <h2 class="text-3xl font-semibold flex gap-4 items-center mb-8">
-          <Code class="size-8" />
-          Projects
-        </h2>
-        <div class="flex flex-col md:flex-row gap-4 md:gap-8 mb-12">
-          <div class="w-full sm:w-1/2 overflow-hidden rounded-xl shadow-md">
-            <img
-              class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
-              src="/imgs/omnifood-image.webp"
-              alt="omnifood company that works with ia for deliver food"
-            />
-          </div>
-          <div
-            class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-between"
-          >
-            <h3 class="mb-2 font-bold text-2xl text-pretty">
-              Omnifood - Smart Meal Delivery Platform
-            </h3>
-            <ul class="flex gap-x-4 flex-wrap gap-3 mb-3">
-              <TechnologiePill
-                class="bg-orange-400 border-orange-300 text-white"
-              >
-                <Html5 class="size-5" />
-                HTML5
-              </TechnologiePill>
-              <TechnologiePill class="bg-blue-400 border-blue-300 text-white">
-                <Css3 class="size-5" />
-                CSS3
-              </TechnologiePill>
-            </ul>
-            <p class="text-gray-600 mb-3">
-              This project was created using HTML and CSS, leveraging both Grid
-              and Flexbox for layout design. It includes responsive features and
-              a functional call-to-action for a real-world feel.
-            </p>
-            <ul class="flex gap-4">
-              <li>
-                <LinkButton
-                  href="https://github.com/AhtesamMuhammad/frontend-development-practice/tree/main/omnifood-desktop"
-                >
-                  <GitHubIcon class="size-5" />
-                  Code
-                </LinkButton>
-              </li>
 
-              <li>
-                <LinkButton href="https://omnifood-ahtesam.netlify.app/">
-                  <Link class="size-5" />
-                  Preview
-                </LinkButton>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
-          <div
-            class="w-full order-2 sm:order-1 md:max-w-lg flex flex-col justify-between"
-          >
-            <h3 class="mb-2 font-bold text-2xl text-pretty">
-              MovieHub - Android App for Exploring Movies via API
-            </h3>
-            <ul class="flex gap-x-4 flex-wrap gap-3 mb-3">
-              <TechnologiePill class="bg-green-400 border-green-300 text-white">
-                <Android class="size-5" />
-                Android
-              </TechnologiePill>
-              <TechnologiePill
-                class="bg-orange-400 border-orange-300 text-white"
-              >
-                <Java class="size-5" />
-                Java
-              </TechnologiePill>
-            </ul>
-            <p class="text-gray-600 mb-3">
-              This project was created using HTML and CSS, leveraging both Grid
-              and Flexbox for layout design. It includes responsive features and
-              a functional call-to-action for a real-world feel.
-            </p>
-            <ul class="flex gap-4">
-              <li>
-                <LinkButton href="https://github.com/AhtesamMuhammad/MovieHub">
-                  <GitHubIcon class="size-5" />
-                  Code
-                </LinkButton>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="md:w-full sm:w-1/2 order-1 sm:order-2 overflow-hidden rounded-xl shadow-md"
-          >
-            <img
-              class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
-              src="/imgs/MovieHub.webp"
-              alt="Mobile app use and interpret the The Movie Database API"
-            />
-          </div>
-        </div>
-        <a
-          class="block text-sm text-center mt-10 md:mt-14 underline text-orange-400"
-          href="https://github.com/AhtesamMuhammad"
-          target="_blank"
-          rel="noopener">See more projects &rarr;</a
-        >
-      </article>
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold flex gap-4 items-center mb-8">
+        <Code class="size-8" />
+        Projects
+      </h2>
+      <Project/>
     </SectionContainer>
     <SectionContainer id="studies">
       <h2 class="text-3xl font-semibold flex items-center gap-4 mb-8">
@@ -204,3 +106,5 @@ import SkillsItem from "../components/SkillsItem.astro";
     </SectionContainer>
   </main>
 </Layout>
+
+

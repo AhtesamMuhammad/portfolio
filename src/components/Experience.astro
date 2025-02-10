@@ -3,11 +3,17 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
+    title: "FULL STACK DEVELOPER",
+    date: "Jan 2025 - Currently",
+    description:
+      "Designed and developed the mechanics of a video game using Godot Engine and GDScript, leveraging my web design and development skills, while also creating the studio's official website with Astro, Tailwind, and JavaScript, integrating an API for email management via CTA on Netlify.",
+    company: "Somni Studio",
+  },
+  {
     title: "QA TESTER",
     date: "Nov 2023 - Feb 2024",
     description:
       "Performed Web3 testing and analyzed data using recording tools and network analysis. Led an automation project with Playwright, reported bugs in Jira, and documented in Notion. Worked with the team to reproduce and fix bugs.",
-    link: "",
     company: "Brickken",
   },
   {
@@ -15,26 +21,19 @@ const EXPERIENCE = [
     date: "March 2023 - May 2023",
     description:
       "Learned programming concepts and explored new web development tools. Adapted to an international setting and improved English skills. Gained more programming knowledge and strengthened language abilities.",
-    link: "",
     company: "Opolglass",
   },
-  {
-    title: "MARKETING ASSISTANT",
-    date: "Nov 2020 - April 2021",
-    description:
-      "Managed client database efficiently. Increased brand awareness through social media posts. Created engaging marketing videos.",
-    link: "",
-    company: "MailBoxes Etc.",
-  },
+  // {
+  //   title: "MARKETING ASSISTANT",
+  //   date: "Nov 2020 - April 2021",
+  //   description:
+  //     "Managed client database efficiently. Increased brand awareness through social media posts. Created engaging marketing videos.",
+  //   link: "",
+  //   company: "MailBoxes Etc.",
+  // },
 ];
 ---
 
-<ol
-  class="relative border-s border-gray-200 px-4 mx-4"
->
-  {
-    EXPERIENCE.map((experience) => (
-        <ExperienceItem {...experience} />
-    ))
-  }
+<ol class="relative border-s border-gray-200 px-4 mx-4 ">
+  {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
 </ol>

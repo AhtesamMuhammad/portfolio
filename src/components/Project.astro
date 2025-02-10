@@ -1,0 +1,162 @@
+---
+import Css3 from "./icons/Css3.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Html5 from "./icons/Html5.astro";
+import Github from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import Android from "./icons/Android.astro";
+import Java from "./icons/Java.astro";
+import TechnologiePill from "./TechnologiePill.astro";
+import LinkButton from "./LinkButton.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+
+const projects = [
+  {
+    id: "stepland",
+    title: "Stepland ",
+    subtitle:
+      "Videogame website with CTA to capture emails and create a community.",
+    description:
+      "I designed and developed a website for gaming industry using Astro and Tailwind, connected it with Brevo API to send emails using a form. Additionally followed design patterns to ensure a responsive and seamless experience across dierent devices.",
+    images: [
+      { id: "slide-1", src: "imgs/stepland-web-03.png" },
+      { id: "slide-2", src: "imgs/stepland-web-02.png" },
+      { id: "slide-3", src: "imgs/stepland-web-01.png" },
+    ],
+    technologies: [
+      {
+        name: "Astro",
+        class: "bg-purple-600 border-purple-300 text-white",
+        icon: AstroIcon,
+      },
+      {
+        name: "Tailwind",
+        class: "bg-blue-500 border-blue-300 text-white",
+        icon: Tailwind,
+      },
+    ],
+    links: [
+      {
+        url: "https://stepland.es/",
+        icon: Link,
+        text: "Go to Site",
+      },
+    ],
+  },
+  {
+    id: "moviehub",
+    title: "MovieHub",
+    subtitle: "Android App for Exploring Movies via API",
+    description:
+      "This project was created using HTML and CSS, leveraging both Grid and Flexbox for layout design. It includes responsive features and a functional call-to-action for a real-world feel.",
+    images: [{ id: "moviehub-image", src: "/imgs/MovieHub.webp" }],
+    technologies: [
+      {
+        name: "Android",
+        class: "bg-green-400 border-green-300 text-white",
+        icon: Android,
+      },
+      {
+        name: "Java",
+        class: "bg-orange-400 border-orange-300 text-white",
+        icon: Java,
+      },
+    ],
+    links: [
+      {
+        url: "https://github.com/AhtesamMuhammad/MovieHub",
+        icon: Github,
+        text: "Code",
+      },
+    ],
+  },
+];
+---
+
+<article>
+  {
+    projects.map((project) => (
+      <div class="flex flex-col md:flex-row gap-4 md:gap-8 mb-12">
+        {project.images.length > 1 ? (
+          <div class="relative w-full sm:w-1/2 overflow-hidden rounded-xl shadow-md">
+            <div class="flex overflow-hidden snap-x snap-mandatory scroll-smooth h-full">
+              {project.images.map((image) => (
+                <img
+                  id={image.id}
+                  class="w-full h-full object-cover object-center snap-start"
+                  src={image.src}
+                  alt={project.title}
+                />
+              ))}
+            </div>
+            <div class="slider-nav absolute bottom-2 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10">
+              {project.images.map((image) => (
+                <a
+                  href={`#${image.id}`}
+                  class="w-3 h-3 bg-gray-700 rounded-full block hover:bg-gray-600"
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div class="flex w-full md:w-1/2 overflow-hidden rounded-xl shadow-md order-0 md:order-1">
+            <img
+              class="w-full h-full object-cover object-left border hover:scale-105 transition duration-300"
+              src={project.images[0].src}
+              alt={project.title}
+            />
+          </div>
+        )}
+
+        <div class="w-full md:w-1/2 md:max-w-lg flex flex-col justify-between">
+          <h3 class="mb-2 text-xl text-pretty">
+            <span class="font-bold">{project.title}</span> - {project.subtitle}
+          </h3>
+
+          <ul class="flex gap-x-4 flex-wrap gap-3 mb-3">
+            {project.technologies.map((tech) => (
+              <TechnologiePill class={tech.class}>
+                <tech.icon class="size-5" />
+                {tech.name}
+              </TechnologiePill>
+            ))}
+          </ul>
+
+          <p class="text-gray-600 mb-3">{project.description}</p>
+
+          <ul class="flex gap-4">
+            {project.links.map((link) => (
+              <li>
+                <LinkButton href={link.url}>
+                  <link.icon class="size-5" />
+                  {link.text}
+                </LinkButton>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))
+  }
+
+  <a
+    class="block text-sm text-center mt-10 md:mt-14 underline text-orange-400 hover:text-orange-600"
+    href="https://github.com/AhtesamMuhammad"
+    target="_blank"
+    rel="noopener"
+  >
+    See more projects &rarr;
+  </a>
+</article>
+
+<script>
+  document.querySelectorAll(".slider-nav a").forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(
+        (e.currentTarget as HTMLAnchorElement).getAttribute("href") || ""
+      );
+      target?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  });
+</script>
