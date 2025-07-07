@@ -3,6 +3,13 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
+    title: "FRONTEND WEB DEVELOPMENT",
+    date: "Jun 2025 - Currently",
+    description:
+      "Developed a custom e-commerce frontend for an Italian product store using React, Tailwind, and JavaScript, integrating WooCommerce and Imoje ING APIs, while managing API communication, CORS, and hosting setup via Hostinger and WordPress.",
+    company: "Ciao Italia",
+  },
+  {
     title: "FULL STACK DEVELOPER",
     date: "Jan 2025 - May 2025",
     description:
@@ -34,6 +41,6 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class="relative border-s border-gray-200 px-4 mx-4 ">
+<ol class="relative border-s border-gray-200 px-4 mx-4">
   {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
 </ol>
