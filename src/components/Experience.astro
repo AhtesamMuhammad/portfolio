@@ -3,11 +3,10 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
-    title: "FRONTEND WEB DEVELOPMENT",
-    date: "Jun 2025 - Currently",
+    title: "Frontend Web Developer",
+    date: "Jun 2025 - Present",
     description:
-      "Developed a custom e-commerce frontend for an Italian product store using React, Tailwind, and JavaScript, integrating WooCommerce and Imoje ING APIs, while managing API communication, CORS, and hosting setup via Hostinger and WordPress.",
-    company: "Ciao Italia",
+      "Providing freelance web development services focused on building custom websites and e-commerce platforms. Experienced in React, TypeScript, Tailwind, and JavaScript, with the ability to integrate and adapt to various backends such as WordPress, or client-preferred systems. Skilled in managing API integrations, solving CORS issues, and handling hosting setups. Open to quickly learning and adopting new tools to deliver high-quality, tailored solutions for each project.",
   },
   {
     title: "FULL STACK DEVELOPER",
@@ -23,13 +22,13 @@ const EXPERIENCE = [
       "Performed Web3 testing and analyzed data using recording tools and network analysis. Led an automation project with Playwright, reported bugs in Jira, and documented in Notion. Worked with the team to reproduce and fix bugs.",
     company: "Brickken",
   },
-  {
-    title: "DEVELOPER INTERN ERASMUS+",
-    date: "March 2023 - May 2023",
-    description:
-      "Learned programming concepts and explored new web development tools. Adapted to an international setting and improved English skills. Gained more programming knowledge and strengthened language abilities.",
-    company: "Opolglass",
-  },
+  // {
+  //   title: "DEVELOPER INTERN ERASMUS+",
+  //   date: "March 2023 - May 2023",
+  //   description:
+  //     "Learned programming concepts and explored new web development tools. Adapted to an international setting and improved English skills. Gained more programming knowledge and strengthened language abilities.",
+  //   company: "Opolglass",
+  // },
   // {
   //   title: "MARKETING ASSISTANT",
   //   date: "Nov 2020 - April 2021",
@@ -43,4 +42,12 @@ const EXPERIENCE = [
 
 <ol class="relative border-s border-gray-200 px-4 mx-4">
   {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+  <a
+    class="block text-sm text-center mt-10 md:mt-14 underline text-orange-400 hover:text-orange-600"
+    href="https://www.linkedin.com/in/ahtesamm/details/experience/"
+    target="_blank"
+    rel="noopener"
+  >
+    See more experience &rarr;
+  </a>
 </ol>
