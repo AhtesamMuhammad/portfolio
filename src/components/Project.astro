@@ -1,7 +1,5 @@
 ---
-import Css3 from "./icons/Css3.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Html5 from "./icons/Html5.astro";
 import Github from "./icons/GitHub.astro";
 import Link from "./icons/Link.astro";
 import Android from "./icons/Android.astro";
@@ -117,7 +115,7 @@ const projects = [
 
 <article>
   {
-    projects.map((project, index) => (
+    projects.map((project: (typeof projects)[number], index: number) => (
       <div
         class={`flex flex-col md:flex-row gap-4 md:gap-8 mb-12 ${
           index % 2 === 1 ? "md:flex-row-reverse" : ""
@@ -202,7 +200,7 @@ const projects = [
     const dots = slider.querySelectorAll("[data-dot]");
     let currentIndex = 0;
 
-    function showImage(index) {
+    function showImage(index: number) {
       images[index].scrollIntoView({
         behavior: "smooth",
         block: "nearest",
