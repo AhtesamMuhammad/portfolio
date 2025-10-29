@@ -1,5 +1,6 @@
 ---
 import Download from "./icons/Download.astro";
+import Link from "./icons/Link.astro";
 
 const navItems = [
   {
@@ -44,11 +45,12 @@ const navItems = [
     }
     <a
       class="flex items-center gap-2 py-1.5 px-4 bg-orange-500 text-white font-medium rounded-full hover:scale-95 transition duration-300"
-      href="/ahtesam-resume.pdf"
-      download
+      href="https://drive.google.com/file/d/1Gk6S52jREEGtfUlYzAe54PSv02Pc2ciU/view"
+      target="_blank"
+      rel="noopener"
     >
       Resume
-      <Download class="size-4" />
+      <Link class="size-4" />
     </a>
   </nav>
 </header>
